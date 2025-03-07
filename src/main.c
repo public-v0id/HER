@@ -91,7 +91,7 @@ int main(int argc, char **argv) {
 			}
 			for (int curcol = 0; curcol <= bytes_count && (curcol < colsinfinal || (startR+currow) < totalrows); ++curcol) {
 				char symb = file[((startR+currow) << maxpow) + curcol];
-				mvaddch(currow, maxpowfs+1+(curcol << 1), hex[symb>>4]);
+				mvaddch(currow, maxpowfs+1+(curcol << 1), hex[(symb>>4) & 0xF]);
 				mvaddch(currow, maxpowfs+2+(curcol << 1), hex[symb&0xF]);
 				mvaddch(currow, (bytes_count << 1)+maxpowfs+4+curcol, symb);
 			}
