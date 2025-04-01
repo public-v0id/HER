@@ -57,8 +57,7 @@ int main(int argc, char **argv) {
 		close(fd);
 		return 0;
 	}
-	printf("%d\n", max2pow(statbuf.st_size));
-	int maxpowfs = max2pow(statbuf.st_size) >> 2;
+	int maxpowfs = (max2pow(statbuf.st_size)+3) >> 2;
 	int rows, cols;
 	int curR = 0, curS = 0;
 	int startR = 0;
